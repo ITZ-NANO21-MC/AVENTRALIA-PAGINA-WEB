@@ -12,7 +12,7 @@ export function Footer() {
   return (
     <footer className="bg-background border-t border-border pt-20 pb-10 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
           <div className="md:col-span-2 space-y-6">
             <Link href="/" className="flex items-center gap-2">
               <div className="relative w-8 h-8 flex items-center justify-center">
@@ -42,19 +42,6 @@ export function Footer() {
             <h4 className="font-headline font-bold text-sm uppercase tracking-widest">Explorar</h4>
             <ul className="space-y-4">
               {["Colecciones", "Lookbook", "Catálogo", "Acerca de"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-muted-foreground hover:text-accent transition-colors text-sm">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="space-y-6">
-            <h4 className="font-headline font-bold text-sm uppercase tracking-widest">Legal</h4>
-            <ul className="space-y-4">
-              {["Privacidad", "Términos", "Cookies", "Envío"].map((item) => (
                 <li key={item}>
                   <Link href="#" className="text-muted-foreground hover:text-accent transition-colors text-sm">
                     {item}
