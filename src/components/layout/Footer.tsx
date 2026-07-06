@@ -3,10 +3,19 @@
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { Instagram, Twitter, Linkedin, Github, ArrowUp } from "lucide-react"
+import { useState, useEffect } from "react"
 
 export function Footer() {
+  const [year, setYear] = useState<number | null>(null)
+
+  useEffect(() => {
+    setYear(new Date().getFullYear())
+  }, [])
+
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }
   }
 
   return (
@@ -54,7 +63,7 @@ export function Footer() {
 
         <div className="border-t border-border pt-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Aventralia Vanguard. Todos los derechos reservados.
+            © {year || '...'} Aventralia Vanguard. Todos los derechos reservados.
           </p>
           <button
             onClick={scrollToTop}
