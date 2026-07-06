@@ -1,6 +1,5 @@
 import { Hero } from "@/components/home/Hero"
 import { Stats } from "@/components/home/Stats"
-import { AIStylist } from "@/components/stylist/AIStylist"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
@@ -61,8 +60,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <AIStylist />
 
       {/* CTA Section */}
       <section className="py-24 px-6">
