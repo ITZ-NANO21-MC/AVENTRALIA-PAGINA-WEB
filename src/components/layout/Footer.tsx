@@ -6,11 +6,13 @@ import { Instagram, Twitter, Linkedin, Github, ArrowUp } from "lucide-react"
 import { useState, useEffect } from "react"
 
 export function Footer() {
-  const [year, setYear] = useState<number | null>(null)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setYear(new Date().getFullYear())
+    setMounted(true)
   }, [])
+
+  const currentYear = new Date().getFullYear()
 
   const scrollToTop = () => {
     if (typeof window !== 'undefined') {
@@ -63,7 +65,7 @@ export function Footer() {
 
         <div className="border-t border-border pt-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-sm text-muted-foreground">
-            © {year || '...'} Aventralia Vanguard. Todos los derechos reservados.
+            © {mounted ? currentYear : '...'} Aventralia Vanguard. Todos los derechos reservados.
           </p>
           <button
             onClick={scrollToTop}
