@@ -1,29 +1,41 @@
-# Aventralia Vanguard
+# AVENTRALIA Vanguard
 
-Este es el repositorio oficial de **Aventralia Vanguard**, una marca de ropa premium enfocada en el crecimiento personal y el liderazgo.
+> **"Cree en tu visión, incluso cuando nadie más pueda verla."**
 
-## Slogan
-"Evoluciona, crece y lidera tu camino."
+Aventralia es una marca personal enfocada en el crecimiento, la creatividad y la construcción de proyectos con propósito. Representa una mentalidad basada en la evolución constante, la disciplina y el poder de transformar ideas en realidades tangibles.
 
-## Repositorio
-Puedes encontrar el código fuente en GitHub: [https://github.com/ITZ-NANO21-MC/AVENTRALIA-PAGINA-WEB.git](https://github.com/ITZ-NANO21-MC/AVENTRALIA-PAGINA-WEB.git)
+## 🚀 Filosofía (Vision. Action. Legacy.)
+Las oportunidades no siempre aparecen; muchas veces se construyen. Aventralia cree que cada persona posee el potencial de crear algo extraordinario cuando decide confiar en su visión y trabajar por ella.
 
-## Tecnologías Principales
-- **Next.js 15** (App Router)
-- **React 19**
-- **Tailwind CSS**
-- **Shadcn UI**
-- **Genkit** (AI Personal Stylist)
-- **Framer Motion**
-- **Firebase**
+## 🎯 Misión
+Inspirar a las personas a desarrollar su potencial, fortalecer su confianza y perseguir sus objetivos mediante contenido, creatividad, innovación y desarrollo personal.
 
-## Cómo empezar
-Para iniciar el servidor de desarrollo:
-```bash
-npm run dev
-```
+## 👁️ Visión
+Construir una comunidad global de personas que creen en sí mismas, actúan con determinación y transforman sus ideas en proyectos reales.
 
-Para configurar la IA (Genkit):
-```bash
-npm run genkit:dev
-```
+## ✨ Valores
+- **Creatividad e Innovación**
+- **Disciplina y Perseverancia**
+- **Evolución Constante**
+- **Autenticidad**
+- **Aprendizaje Continuo**
+
+## 📜 El Manifiesto
+"No creas en lo que te dicen los demás. Cree en tu visión."
+No seguimos tendencias para encajar. Creamos nuestro propio camino. No buscamos aprobación, buscamos crecimiento. El futuro pertenece a quienes se atreven a construirlo.
+
+## 🛠️ Tecnologías
+- **Framework:** Next.js 15 (App Router)
+- **Estilos:** Tailwind CSS
+- **Componentes:** Shadcn UI
+- **Animaciones:** Framer Motion
+- **Backend:** Firebase (Auth & Firestore)
+- **IA:** Genkit (Google AI)
+
+## 📱 Redes Oficiales
+- **Instagram:** [@aven_tralia](https://www.instagram.com/aven_tralia)
+- **TikTok:** [@aven_tralia](https://www.tiktok.com/@aven_tralia)
+- **YouTube:** [@Aven_tralia](https://www.youtube.com/@Aven_tralia)
+
+---
+*Aventralia - Creando oportunidades. Evolucionando ideas. Construyendo identidad.*
