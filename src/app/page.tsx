@@ -39,7 +39,7 @@ export default function Home() {
                   UNA <span className="text-gradient">MENTALIDAD</span>
                 </h2>
                 <p className="text-muted-foreground text-lg leading-relaxed italic">
-                  "Cree en tu visión, incluso cuando nadie más pueda verla."
+                  "No creas en lo que te dicen los demás. Cree en tu visión."
                 </p>
               </div>
 
@@ -94,9 +94,11 @@ export default function Home() {
               Únete a la comunidad que cree en la creatividad, la disciplina y el poder de una visión auténtica.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-              <Button size="lg" className="rounded-full px-10 bg-primary text-primary-foreground group font-bold tracking-widest uppercase text-xs">
-                Únete ahora <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              <Link href="/contact">
+                <Button size="lg" className="rounded-full px-10 bg-primary text-primary-foreground group font-bold tracking-widest uppercase text-xs">
+                  Únete ahora <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
               <Link href="/contact">
                 <Button size="lg" variant="outline" className="rounded-full px-10 border-border font-bold tracking-widest uppercase text-xs">
                   Contacto Directo

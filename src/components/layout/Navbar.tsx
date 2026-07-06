@@ -65,9 +65,11 @@ export function Navbar() {
               )}
             </Link>
           ))}
-          <Button variant="outline" size="sm" className="group rounded-full border-muted-foreground/20">
-            Únete <ArrowUpRight className="ml-1 w-4 h-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </Button>
+          <Link href="/contact">
+            <Button variant="outline" size="sm" className="group rounded-full border-muted-foreground/20">
+              Únete <ArrowUpRight className="ml-1 w-4 h-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -102,9 +104,11 @@ export function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <Button className="w-full mt-4 bg-primary text-primary-foreground">
-                Únete a la Comunidad
-              </Button>
+              <Link href="/contact" onClick={() => setIsOpen(false)}>
+                <Button className="w-full mt-4 bg-primary text-primary-foreground">
+                  Únete a la Comunidad
+                </Button>
+              </Link>
             </div>
           </motion.div>
         )}
