@@ -7,12 +7,12 @@ import { useState, useEffect } from "react"
 
 export function Footer() {
   const [mounted, setMounted] = useState(false)
+  const [year, setYear] = useState<number | string>("...")
 
   useEffect(() => {
     setMounted(true)
+    setYear(new Date().getFullYear())
   }, [])
-
-  const currentYear = new Date().getFullYear()
 
   const scrollToTop = () => {
     if (typeof window !== 'undefined') {
@@ -52,10 +52,15 @@ export function Footer() {
           <div className="space-y-6">
             <h4 className="font-headline font-bold text-sm uppercase tracking-widest">Explorar</h4>
             <ul className="space-y-4">
-              {["Colecciones", "Lookbook", "Catálogo", "Acerca de"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-muted-foreground hover:text-accent transition-colors text-sm">
-                    {item}
+              {[
+                { name: "Colecciones", href: "/collections" },
+                { name: "Lookbook", href: "/lookbook" },
+                { name: "Catálogo", href: "/catalog" },
+                { name: "Contacto", href: "/contact" }
+              ].map((item) => (
+                <li key={item.name}>
+                  <Link href={item.href} className="text-muted-foreground hover:text-accent transition-colors text-sm">
+                    {item.name}
                   </Link>
                 </li>
               ))}
@@ -65,7 +70,7 @@ export function Footer() {
 
         <div className="border-t border-border pt-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-sm text-muted-foreground">
-            © {mounted ? currentYear : '...'} Aventralia Vanguard. Todos los derechos reservados.
+            © {year} Aventralia Vanguard. Todos los derechos reservados.
           </p>
           <button
             onClick={scrollToTop}
