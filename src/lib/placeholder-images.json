@@ -2,51 +2,51 @@
   "placeholderImages": [
     {
       "id": "hero",
-      "description": "Minimalist premium streetwear showcase",
-      "imageUrl": "https://picsum.photos/seed/aventralia-hero/1920/1080",
-      "imageHint": "streetwear premium fashion"
+      "description": "Cinematic minimalist urban vision",
+      "imageUrl": "https://picsum.photos/seed/av-hero-vision/1920/1080",
+      "imageHint": "cinematic urban minimalist"
     },
     {
       "id": "collection-1",
-      "description": "Essential leadership streetwear",
-      "imageUrl": "https://picsum.photos/seed/av-coll-1/800/1000",
-      "imageHint": "fashion clothing minimalist"
+      "description": "Identity and growth conceptual",
+      "imageUrl": "https://picsum.photos/seed/av-identity/800/1000",
+      "imageHint": "professional minimalist portrait"
     },
     {
       "id": "collection-2",
-      "description": "Urban sport collection",
-      "imageUrl": "https://picsum.photos/seed/av-coll-2/800/1000",
-      "imageHint": "sportswear urban fashion"
+      "description": "Innovation and creativity",
+      "imageUrl": "https://picsum.photos/seed/av-creative/800/1000",
+      "imageHint": "modern conceptual art"
     },
     {
       "id": "lookbook-1",
-      "description": "Style 1",
-      "imageUrl": "https://picsum.photos/seed/look1/600/800",
-      "imageHint": "fashion model leadership"
+      "description": "Leadership mindset",
+      "imageUrl": "https://picsum.photos/seed/av-leader/600/800",
+      "imageHint": "cinematic professional fashion"
     },
     {
       "id": "lookbook-2",
-      "description": "Style 2",
-      "imageUrl": "https://picsum.photos/seed/look2/600/800",
-      "imageHint": "premium outfit growth"
+      "description": "Future opportunities",
+      "imageUrl": "https://picsum.photos/seed/av-future/600/800",
+      "imageHint": "minimalist aesthetic architecture"
     },
     {
       "id": "lookbook-3",
-      "description": "Style 3",
-      "imageUrl": "https://picsum.photos/seed/look3/600/800",
-      "imageHint": "streetwear minimalist leadership"
+      "description": "Constant evolution",
+      "imageUrl": "https://picsum.photos/seed/av-evolution/600/800",
+      "imageHint": "abstract minimalist movement"
     },
     {
       "id": "product-1",
-      "description": "Leadership Hoodie",
-      "imageUrl": "https://picsum.photos/seed/prod1/600/600",
-      "imageHint": "hoodie high quality"
+      "description": "Vision Concept",
+      "imageUrl": "https://picsum.photos/seed/av-prod1/600/600",
+      "imageHint": "premium minimalist design"
     },
     {
       "id": "product-2",
-      "description": "Evolution Tee",
-      "imageUrl": "https://picsum.photos/seed/prod2/600/600",
-      "imageHint": "tshirt minimalist fashion"
+      "description": "Action Concept",
+      "imageUrl": "https://picsum.photos/seed/av-prod2/600/600",
+      "imageHint": "elegant modern concept"
     }
   ]
 }

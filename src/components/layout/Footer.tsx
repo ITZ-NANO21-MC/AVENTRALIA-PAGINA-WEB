@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Instagram, Twitter, Linkedin, Github, ArrowUp } from "lucide-react"
+import { Instagram, Youtube, Mail, Phone, ArrowUp } from "lucide-react"
 import { useState, useEffect } from "react"
 
 export function Footer() {
@@ -21,45 +21,52 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-background border-t border-border pt-20 pb-10 px-6">
+    <footer className="bg-background border-t border-white/5 pt-24 pb-12 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
-          <div className="md:col-span-2 space-y-6">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="relative w-8 h-8 flex items-center justify-center">
-                <div className="absolute inset-0 border border-primary rotate-45 rounded-sm" />
-                <span className="font-headline font-bold text-sm tracking-tighter relative">A</span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-24">
+          <div className="md:col-span-2 space-y-8">
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="relative w-10 h-10 flex items-center justify-center">
+                <div className="absolute inset-0 border border-white rotate-45 rounded-sm transition-transform group-hover:rotate-90" />
+                <span className="font-headline font-bold text-lg tracking-tighter relative">A</span>
               </div>
-              <span className="font-headline font-bold text-lg tracking-widest">AVENTRALIA</span>
+              <span className="font-headline font-bold text-2xl tracking-[0.2em]">AVENTRALIA</span>
             </Link>
-            <p className="text-muted-foreground max-w-sm leading-relaxed">
-              Evoluciona, crece y lidera tu camino. Aventralia es más que ropa; es un símbolo de tu propio proceso de transformación y liderazgo personal.
+            <p className="text-muted-foreground max-w-md leading-relaxed text-sm">
+              Aventralia es una marca personal enfocada en el crecimiento, la creatividad y la construcción de proyectos con propósito. Inspira a confiar en tu visión y actuar para hacerla realidad.
             </p>
-            <div className="flex items-center gap-4">
-              {[Instagram, Twitter, Linkedin, Github].map((Icon, i) => (
+            <div className="flex items-center gap-5">
+              {[
+                { icon: Instagram, href: "https://www.instagram.com/aven_tralia" },
+                { icon: Youtube, href: "https://www.youtube.com/@Aven_tralia" },
+                { icon: Mail, href: "mailto:aventralia@gmail.com" }
+              ].map((social, i) => (
                 <motion.a
                   key={i}
-                  href="#"
-                  whileHover={{ y: -2 }}
-                  className="w-10 h-10 flex items-center justify-center rounded-full border border-border hover:border-accent transition-colors"
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ y: -3 }}
+                  className="w-11 h-11 flex items-center justify-center rounded-full border border-white/10 hover:border-white transition-colors"
                 >
-                  <Icon className="w-5 h-5" />
+                  <social.icon className="w-5 h-5" />
                 </motion.a>
               ))}
             </div>
           </div>
 
-          <div className="space-y-6">
-            <h4 className="font-headline font-bold text-sm uppercase tracking-widest">Explorar</h4>
+          <div className="space-y-8">
+            <h4 className="font-headline font-bold text-xs uppercase tracking-[0.4em] text-accent">Navegación</h4>
             <ul className="space-y-4">
               {[
+                { name: "Inicio", href: "/" },
                 { name: "Colecciones", href: "/collections" },
                 { name: "Lookbook", href: "/lookbook" },
                 { name: "Catálogo", href: "/catalog" },
                 { name: "Contacto", href: "/contact" }
               ].map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-muted-foreground hover:text-accent transition-colors text-sm">
+                  <Link href={item.href} className="text-muted-foreground hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">
                     {item.name}
                   </Link>
                 </li>
@@ -68,13 +75,13 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border pt-10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-sm text-muted-foreground">
-            © {year} Aventralia Vanguard. Todos los derechos reservados.
+        <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row items-center justify-between gap-8">
+          <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-medium">
+            © {mounted ? year : "..."} AVENTRALIA Vision. Action. Legacy.
           </p>
           <button
             onClick={scrollToTop}
-            className="group flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+            className="group flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-muted-foreground hover:text-white transition-colors font-bold"
           >
             Volver arriba
             <ArrowUp className="w-4 h-4 transition-transform group-hover:-translate-y-1" />

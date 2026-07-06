@@ -19,8 +19,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: 'Aventralia Vanguard | Evoluciona, Crece, Lidera',
-  description: 'Aventralia Vanguard es una marca de ropa premium enfocada en el crecimiento personal y el liderazgo. Viste tu evolución.',
+  title: 'AVENTRALIA | Cree en tu visión',
+  description: 'Creando oportunidades. Evolucionando ideas. Construyendo identidad. Una marca enfocada en el desarrollo del potencial humano.',
 };
 
 export default function RootLayout({

@@ -4,47 +4,26 @@
 
 @layer base {
   :root {
-    --background: 210 18% 5%;
-    --foreground: 210 20% 92%;
-    --card: 210 18% 7%;
-    --card-foreground: 210 20% 92%;
-    --popover: 210 18% 7%;
-    --popover-foreground: 210 20% 92%;
-    --primary: 210 20% 92%;
-    --primary-foreground: 210 18% 5%;
-    --secondary: 210 10% 12%;
-    --secondary-foreground: 210 20% 92%;
-    --muted: 210 10% 12%;
-    --muted-foreground: 210 10% 65%;
-    --accent: 195 32% 80%;
-    --accent-foreground: 210 18% 5%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 0 0% 80%;
+    --accent-foreground: 0 0% 0%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 210 10% 15%;
-    --input: 210 10% 15%;
-    --ring: 195 32% 80%;
-    --radius: 0.75rem;
-  }
-  .dark {
-    --background: 210 18% 5%;
-    --foreground: 210 20% 92%;
-    --card: 210 18% 7%;
-    --card-foreground: 210 20% 92%;
-    --popover: 210 18% 7%;
-    --popover-foreground: 210 20% 92%;
-    --primary: 210 20% 92%;
-    --primary-foreground: 210 18% 5%;
-    --secondary: 210 10% 12%;
-    --secondary-foreground: 210 20% 92%;
-    --muted: 210 10% 12%;
-    --muted-foreground: 210 10% 65%;
-    --accent: 195 32% 80%;
-    --accent-foreground: 210 18% 5%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 210 10% 15%;
-    --input: 210 10% 15%;
-    --ring: 195 32% 80%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 80%;
+    --radius: 0.5rem;
   }
 }
 
@@ -65,11 +44,11 @@
 }
 
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-br from-primary via-primary to-accent;
+  @apply bg-clip-text text-transparent bg-gradient-to-br from-white via-accent to-muted-foreground;
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {

@@ -3,7 +3,7 @@ import { Stats } from "@/components/home/Stats"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, ChevronRight } from "lucide-react"
+import { ArrowRight, ChevronRight, Target, Lightbulb, TrendingUp } from "lucide-react"
 import { PlaceHolderImages } from "@/lib/placeholder-images"
 
 export default function Home() {
@@ -21,62 +21,85 @@ export default function Home() {
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden group">
               <Image 
                 src={showcaseImg?.imageUrl || ""}
-                alt="Aventralia Ethos"
+                alt="Aventralia Filosofía"
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                data-ai-hint="leadership clothing fashion"
+                className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                data-ai-hint="minimalist cinematic portrait"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
               <div className="absolute bottom-10 left-10 space-y-2">
-                <span className="text-accent text-xs font-bold uppercase tracking-widest">Manifiesto Aventralia</span>
-                <h3 className="font-headline text-3xl font-bold">LIDERAZGO EN CADA FIBRA</h3>
+                <span className="text-accent text-xs font-bold uppercase tracking-widest">Identidad Aventralia</span>
+                <h3 className="font-headline text-3xl font-bold uppercase">Vision. Action. Legacy.</h3>
               </div>
             </div>
-            <div className="space-y-8">
-              <h2 className="font-headline text-4xl md:text-6xl font-black leading-tight">
-                MÁS QUE ROPA, <br />
-                UNA <span className="text-gradient">DECLARACIÓN</span>
-              </h2>
+            <div className="space-y-10">
+              <div className="space-y-4">
+                <h2 className="font-headline text-4xl md:text-6xl font-black leading-tight uppercase">
+                  MÁS QUE UNA MARCA, <br />
+                  UNA <span className="text-gradient">MENTALIDAD</span>
+                </h2>
+                <p className="text-muted-foreground text-lg leading-relaxed italic">
+                  "Cree en tu visión, incluso cuando nadie más pueda verla."
+                </p>
+              </div>
+
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Aventralia nace de la necesidad de unificar el estilo urbano con la mentalidad de alto rendimiento. Cada prenda está diseñada para acompañarte en tu ascenso, ofreciendo comodidad técnica sin comprometer una estética sofisticada y minimalista.
+                Aventralia es una plataforma de inspiración para quienes deciden construir su propio camino. Representamos la valentía de emprender, la disciplina del aprendizaje constante y la determinación de convertir ideas en realidades tangibles.
               </p>
-              <ul className="space-y-4">
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {[
-                  "Materiales de grado técnico con durabilidad extrema.",
-                  "Cortes ergonómicos que facilitan el movimiento dinámico.",
-                  "Estética monocromática para una elegancia atemporal.",
-                  "Sostenibilidad consciente en cada proceso de producción."
+                  { icon: Target, title: "Misión", text: "Inspirar a desarrollar el potencial y fortalecer la confianza." },
+                  { icon: TrendingUp, title: "Visión", text: "Construir una comunidad global que actúe con determinación." },
+                  { icon: Lightbulb, title: "Filosofía", text: "Las oportunidades no aparecen, se construyen con esfuerzo." }
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
-                    <span className="text-muted-foreground">{item}</span>
-                  </li>
+                  <div key={i} className="space-y-2">
+                    <div className="flex items-center gap-2 text-accent">
+                      <item.icon className="w-5 h-5" />
+                      <h4 className="font-bold uppercase text-sm tracking-widest">{item.title}</h4>
+                    </div>
+                    <p className="text-sm text-muted-foreground">{item.text}</p>
+                  </div>
                 ))}
-              </ul>
-              <Button size="lg" variant="link" className="px-0 text-accent group">
-                Leer nuestra historia <ChevronRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </div>
+
+              <Button size="lg" variant="link" className="px-0 text-accent group h-auto">
+                Descubre nuestra historia <ChevronRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Manifest Section */}
+      <section className="py-24 px-6 bg-secondary/30">
+        <div className="container mx-auto max-w-4xl text-center space-y-12">
+          <span className="text-accent text-xs font-bold uppercase tracking-widest">Nuestro Manifiesto</span>
+          <blockquote className="font-headline text-3xl md:text-5xl font-black leading-tight">
+            "NO SIGUIMOS TENDENCIAS PARA ENCAJAR. <span className="text-gradient">CREAMOS NUESTRO PROPIO CAMINO.</span> NO BUSCAMOS APROBACIÓN, BUSCAMOS CRECIMIENTO."
+          </blockquote>
+          <p className="text-muted-foreground text-lg italic">
+            — Aventralia Manifesto
+          </p>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="py-24 px-6">
+      <section className="py-32 px-6">
         <div className="container mx-auto">
           <div className="bg-card rounded-3xl p-12 md:p-24 text-center space-y-8 relative overflow-hidden border border-border">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-accent/5 blur-3xl rounded-full -z-10" />
-            <h2 className="font-headline text-4xl md:text-6xl font-black">¿LISTO PARA TU <span className="text-gradient">EVOLUCIÓN</span>?</h2>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-              Únete a la vanguardia del estilo y el crecimiento personal. Recibe acceso exclusivo a lanzamientos limitados.
+            <h2 className="font-headline text-4xl md:text-7xl font-black uppercase">¿LISTO PARA <span className="text-gradient">CONSTRUIR</span>?</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Únete a la comunidad que cree en la creatividad, la disciplina y el poder de una visión auténtica.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="lg" className="rounded-full px-8 bg-primary text-primary-foreground group">
-                Ir a la Tienda <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
+              <Button size="lg" className="rounded-full px-10 bg-primary text-primary-foreground group font-bold tracking-widest uppercase text-xs">
+                Únete ahora <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Link href="/contact">
-                <Button size="lg" variant="outline" className="rounded-full px-8 border-border">
-                  Conoce el Showroom
+                <Button size="lg" variant="outline" className="rounded-full px-10 border-border font-bold tracking-widest uppercase text-xs">
+                  Contacto Directo
                 </Button>
               </Link>
             </div>

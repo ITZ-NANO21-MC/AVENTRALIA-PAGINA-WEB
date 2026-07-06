@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Mail, Phone, MapPin, Instagram, Twitter, Send, CheckCircle2, MessageCircle } from "lucide-react"
+import { Mail, Phone, Instagram, Send, CheckCircle2, MessageCircle, Youtube, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -17,61 +17,59 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    // Simulate API call
     await new Promise(r => setTimeout(r, 1500))
     setIsSubmitting(false)
     setSubmitted(true)
     toast({
       title: "Mensaje Enviado",
-      description: "Nuestro equipo de vanguardia se pondrá en contacto contigo pronto.",
+      description: "Gracias por contactar con Aventralia. Te responderemos pronto.",
     })
   }
 
   return (
-    <div className="pt-32 pb-24 px-6 min-h-screen">
+    <div className="pt-32 pb-24 px-6 min-h-screen bg-background">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           <div className="space-y-12">
-            <header className="space-y-4">
-              <span className="text-accent text-xs font-bold uppercase tracking-widest">Soporte & Alianzas</span>
-              <h1 className="font-headline text-5xl md:text-7xl font-black">CONTÁCTANOS</h1>
-              <p className="text-muted-foreground text-lg leading-relaxed max-w-md">
-                ¿Tienes dudas sobre tu pedido o quieres formar parte de nuestro programa de embajadores? Estamos listos para escucharte.
+            <header className="space-y-6">
+              <span className="text-accent text-xs font-bold uppercase tracking-[0.3em]">Hablemos de tu visión</span>
+              <h1 className="font-headline text-6xl md:text-8xl font-black uppercase tracking-tighter">CONTACTO</h1>
+              <p className="text-muted-foreground text-lg leading-relaxed max-w-md font-light">
+                ¿Tienes una idea, quieres colaborar o simplemente necesitas un impulso creativo? Estamos listos para escucharte.
               </p>
             </header>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
               {[
-                { icon: Mail, label: "Email", value: "vanguard@aventralia.com" },
-                { icon: Phone, label: "Soporte WhatsApp", value: "+34 600 000 000" },
-                { icon: MapPin, label: "Showroom Central", value: "C/ de la Innovación, 42, Madrid" },
-                { icon: Instagram, label: "Social", value: "@aventralia.vanguard" }
+                { icon: Mail, label: "Email", value: "aventralia@gmail.com", href: "mailto:aventralia@gmail.com" },
+                { icon: Phone, label: "Teléfono", value: "04122520721", href: "tel:04122520721" },
+                { icon: Instagram, label: "Instagram", value: "@aven_tralia", href: "https://instagram.com/aven_tralia" },
+                { icon: Youtube, label: "YouTube", value: "@Aven_tralia", href: "https://youtube.com/@Aven_tralia" }
               ].map((item, i) => (
                 <div key={i} className="space-y-2">
                   <div className="flex items-center gap-2 text-accent">
                     <item.icon className="w-4 h-4" />
-                    <span className="text-xs font-bold uppercase tracking-widest">{item.label}</span>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.2em]">{item.label}</span>
                   </div>
-                  <p className="font-medium">{item.value}</p>
+                  <a href={item.href} target="_blank" rel="noopener noreferrer" className="font-medium hover:text-accent transition-colors">
+                    {item.value}
+                  </a>
                 </div>
               ))}
             </div>
 
-            {/* Map Representation */}
-            <div className="relative h-64 rounded-3xl overflow-hidden border border-border group">
-              <div className="absolute inset-0 bg-card flex flex-col items-center justify-center p-8 text-center space-y-4">
-                <MapPin className="w-10 h-10 text-accent group-hover:animate-bounce" />
-                <div className="space-y-1">
-                  <h4 className="font-headline font-bold">Showroom Madrid</h4>
-                  <p className="text-xs text-muted-foreground">Abierto de Lunes a Sábado, 10:00 - 20:00</p>
+            <Card className="bg-white/5 border-white/10 rounded-3xl overflow-hidden group">
+              <CardContent className="p-8 space-y-4">
+                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent">
+                  <Zap className="w-6 h-6" />
                 </div>
-                <Button variant="outline" size="sm" className="rounded-full">Ver en Maps</Button>
-              </div>
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/10 via-transparent to-transparent opacity-50 pointer-events-none" />
-            </div>
+                <h4 className="font-headline font-bold text-xl uppercase">Lema Oficial</h4>
+                <p className="text-muted-foreground italic font-light">"No creas en lo que te dicen los demás. Cree en tu visión."</p>
+              </CardContent>
+            </Card>
           </div>
 
-          <Card className="glass-morphism border-border/50">
+          <Card className="glass-morphism border-white/5 rounded-3xl">
             <CardContent className="p-10">
               <AnimatePresence mode="wait">
                 {!submitted ? (
@@ -81,30 +79,30 @@ export default function ContactPage() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     onSubmit={handleSubmit} 
-                    className="space-y-6"
+                    className="space-y-8"
                   >
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Nombre Completo</label>
-                        <Input required placeholder="Tu nombre" className="bg-background/50 border-border" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div className="space-y-3">
+                        <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Nombre</label>
+                        <Input required placeholder="Tu nombre" className="bg-white/5 border-white/10 h-12 rounded-xl focus:border-accent" />
                       </div>
-                      <div className="space-y-2">
-                        <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Email</label>
-                        <Input required type="email" placeholder="tu@email.com" className="bg-background/50 border-border" />
+                      <div className="space-y-3">
+                        <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Email</label>
+                        <Input required type="email" placeholder="tu@email.com" className="bg-white/5 border-white/10 h-12 rounded-xl focus:border-accent" />
                       </div>
                     </div>
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Asunto</label>
-                      <Input required placeholder="¿En qué podemos ayudarte?" className="bg-background/50 border-border" />
+                    <div className="space-y-3">
+                      <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Asunto</label>
+                      <Input required placeholder="¿Sobre qué quieres hablar?" className="bg-white/5 border-white/10 h-12 rounded-xl focus:border-accent" />
                     </div>
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Mensaje</label>
-                      <Textarea required placeholder="Escribe aquí los detalles..." className="min-h-[150px] bg-background/50 border-border resize-none" />
+                    <div className="space-y-3">
+                      <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Mensaje</label>
+                      <Textarea required placeholder="Escribe aquí los detalles..." className="min-h-[160px] bg-white/5 border-white/10 rounded-xl focus:border-accent resize-none" />
                     </div>
                     <Button 
                       type="submit" 
                       disabled={isSubmitting}
-                      className="w-full bg-accent text-accent-foreground font-bold rounded-full h-14 group"
+                      className="w-full bg-primary text-primary-foreground font-bold rounded-full h-14 group uppercase tracking-[0.2em] text-xs"
                     >
                       {isSubmitting ? "Enviando..." : (
                         <>Enviar Mensaje <Send className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" /></>
@@ -116,14 +114,16 @@ export default function ContactPage() {
                     key="success"
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="py-20 text-center space-y-6"
+                    className="py-24 text-center space-y-8"
                   >
-                    <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-accent/10 text-accent mb-4">
-                      <CheckCircle2 className="w-10 h-10" />
+                    <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-accent/10 text-accent mb-4">
+                      <CheckCircle2 className="w-12 h-12" />
                     </div>
-                    <h3 className="font-headline text-3xl font-bold">¡MENSAJE RECIBIDO!</h3>
-                    <p className="text-muted-foreground">Hemos recibido tu mensaje. Nos pondremos en contacto contigo en un plazo de 24-48 horas.</p>
-                    <Button variant="outline" className="rounded-full" onClick={() => setSubmitted(false)}>Enviar otro mensaje</Button>
+                    <div className="space-y-2">
+                      <h3 className="font-headline text-4xl font-black uppercase">¡RECIBIDO!</h3>
+                      <p className="text-muted-foreground font-light">Tu visión ha llegado a nosotros. Te contactaremos pronto.</p>
+                    </div>
+                    <Button variant="outline" className="rounded-full px-10 border-white/10 uppercase tracking-widest text-[10px] font-bold" onClick={() => setSubmitted(false)}>Enviar otro</Button>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -132,13 +132,13 @@ export default function ContactPage() {
         </div>
       </div>
 
-      {/* Floating Action Button */}
+      {/* Floating WhatsApp Action */}
       <motion.a
-        href="https://wa.me/#"
+        href="https://wa.me/584122520721"
         target="_blank"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="fixed bottom-8 right-8 w-16 h-16 bg-accent text-accent-foreground rounded-full flex items-center justify-center shadow-2xl z-[60]"
+        className="fixed bottom-10 right-10 w-16 h-16 bg-white text-black rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.2)] z-[60]"
       >
         <MessageCircle className="w-8 h-8" />
       </motion.a>

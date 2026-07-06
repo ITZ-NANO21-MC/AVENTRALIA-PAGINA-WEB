@@ -17,41 +17,41 @@ export function Hero() {
           src={heroImg?.imageUrl || ""}
           alt="Aventralia Vanguard"
           fill
-          className="object-cover opacity-40"
+          className="object-cover opacity-50 grayscale"
           priority
-          data-ai-hint="streetwear fashion background"
+          data-ai-hint="cinematic urban minimalist background"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto space-y-8"
+          transition={{ duration: 1 }}
+          className="max-w-5xl mx-auto space-y-10"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/20 bg-accent/5 text-accent text-xs font-bold uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-accent text-[10px] font-bold uppercase tracking-[0.3em]">
             <Sparkles className="w-3 h-3" />
-            Nueva Colección: Vanguar Leadership
+            Vision • Action • Legacy
           </div>
           
-          <h1 className="font-headline text-5xl md:text-8xl font-black tracking-tight leading-[0.9]">
-            EVOLUCIONA, CRECE Y <br />
-            <span className="text-gradient">LIDERA TU CAMINO</span>
-          </h1>
+          <div className="space-y-4">
+            <h1 className="font-headline text-6xl md:text-9xl font-black tracking-tighter leading-[0.85] uppercase">
+              CREE EN TU <br />
+              <span className="text-gradient">VISIÓN</span>
+            </h1>
+            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light tracking-wide">
+              Incluso cuando nadie más pueda verla. Creando oportunidades, evolucionando ideas y construyendo identidad.
+            </p>
+          </div>
 
-          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light">
-            No diseñamos ropa, diseñamos herramientas para la mente líder. 
-            Prendas técnicas de alto impacto para quienes no conocen límites.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="rounded-full px-8 bg-primary text-primary-foreground hover:scale-105 transition-transform">
-              Ver Colección <ArrowRight className="ml-2 w-4 h-4" />
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <Button size="lg" className="rounded-full px-10 bg-primary text-primary-foreground hover:scale-105 transition-all duration-300 font-bold uppercase tracking-widest text-xs">
+              Explorar <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-8 border-border hover:bg-muted/50 transition-colors">
-              Explorar Lookbook
+            <Button size="lg" variant="outline" className="rounded-full px-10 border-white/20 hover:bg-white/10 transition-all duration-300 font-bold uppercase tracking-widest text-xs">
+              Manifiesto
             </Button>
           </div>
         </motion.div>
@@ -59,9 +59,9 @@ export function Hero() {
 
       {/* Aesthetic Scroll Indicator */}
       <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-primary/50 to-transparent hidden md:block"
+        animate={{ y: [0, 10, 0], opacity: [0.3, 1, 0.3] }}
+        transition={{ duration: 3, repeat: Infinity }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 w-px h-12 bg-gradient-to-b from-white to-transparent hidden md:block"
       />
     </section>
   )
