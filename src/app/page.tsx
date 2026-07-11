@@ -1,5 +1,6 @@
 import { Hero } from "@/components/home/Hero"
 import { Stats } from "@/components/home/Stats"
+import { FounderStoryModal } from "@/components/home/FounderStoryModal"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
@@ -63,9 +64,11 @@ export default function Home() {
                 ))}
               </div>
 
-              <Button size="lg" variant="link" className="px-0 text-accent group h-auto">
-                Descubre nuestra historia <ChevronRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              <FounderStoryModal>
+                <Button size="lg" variant="link" className="px-0 text-accent group h-auto">
+                  Descubre nuestra historia <ChevronRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </FounderStoryModal>
             </div>
           </div>
         </div>
