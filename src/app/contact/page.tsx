@@ -8,22 +8,46 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
 import { useToast } from "@/hooks/use-toast"
+import emailjs from "@emailjs/browser"
 
 export default function ContactPage() {
   const { toast } = useToast()
+  const [nombre, setNombre] = React.useState("")
+  const [email, setEmail] = React.useState("")
+  const [asunto, setAsunto] = React.useState("")
+  const [mensaje, setMensaje] = React.useState("")
   const [isSubmitting, setIsSubmitting] = React.useState(false)
   const [submitted, setSubmitted] = React.useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    await new Promise(r => setTimeout(r, 1500))
-    setIsSubmitting(false)
-    setSubmitted(true)
-    toast({
-      title: "Mensaje Enviado",
-      description: "Gracias por contactar con Aventralia. Te responderemos pronto.",
-    })
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          from_name: nombre,
+          from_email: email,
+          subject: asunto,
+          message: mensaje,
+        },
+        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! }
+      )
+      setSubmitted(true)
+      toast({
+        title: "Mensaje Enviado",
+        description: "Gracias por contactar con Aventralia. Te responderemos pronto.",
+      })
+    } catch {
+      toast({
+        title: "Error al enviar",
+        description: "No se pudo enviar el mensaje. Intenta de nuevo.",
+        variant: "destructive",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -84,20 +108,20 @@ export default function ContactPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="space-y-3">
                         <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Nombre</label>
-                        <Input required placeholder="Tu nombre" className="bg-white/5 border-white/10 h-12 rounded-xl focus:border-accent" />
+                        <Input required placeholder="Tu nombre" className="bg-white/5 border-white/10 h-12 rounded-xl focus:border-accent" value={nombre} onChange={e => setNombre(e.target.value)} />
                       </div>
                       <div className="space-y-3">
                         <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Email</label>
-                        <Input required type="email" placeholder="tu@email.com" className="bg-white/5 border-white/10 h-12 rounded-xl focus:border-accent" />
+                        <Input required type="email" placeholder="tu@email.com" className="bg-white/5 border-white/10 h-12 rounded-xl focus:border-accent" value={email} onChange={e => setEmail(e.target.value)} />
                       </div>
                     </div>
                     <div className="space-y-3">
                       <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Asunto</label>
-                      <Input required placeholder="¿Sobre qué quieres hablar?" className="bg-white/5 border-white/10 h-12 rounded-xl focus:border-accent" />
+                        <Input required placeholder="¿Sobre qué quieres hablar?" className="bg-white/5 border-white/10 h-12 rounded-xl focus:border-accent" value={asunto} onChange={e => setAsunto(e.target.value)} />
                     </div>
                     <div className="space-y-3">
                       <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Mensaje</label>
-                      <Textarea required placeholder="Escribe aquí los detalles..." className="min-h-[160px] bg-white/5 border-white/10 rounded-xl focus:border-accent resize-none" />
+                        <Textarea required placeholder="Escribe aquí los detalles..." className="min-h-[160px] bg-white/5 border-white/10 rounded-xl focus:border-accent resize-none" value={mensaje} onChange={e => setMensaje(e.target.value)} />
                     </div>
                     <Button 
                       type="submit" 
